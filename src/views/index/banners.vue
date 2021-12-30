@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-warp">
+  <div class="banner-warp"  >
     <swiper :options="swiperOption">
       <swiper-slide v-for="item in banners" :key="item.goods">
         <router-link :to="'/app/home/productDetail/'+item.goods" target = _blank> <img :src="item.image" alt="" /></router-link>

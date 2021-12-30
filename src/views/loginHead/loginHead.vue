@@ -25,7 +25,7 @@
 }
 #header .hd_bar {
     background-color:#222;
-    height:57px
+    height:70px
 }
 #header .logo {
     position:absolute;

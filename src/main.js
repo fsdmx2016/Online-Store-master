@@ -6,7 +6,7 @@ import mock from '../mock/mock.js'
 import $ from 'jquery';
 //全局引入vue
 import Vue from 'vue';
-
+import Element from "element-ui";
 
 //全局引入共用css
 import './styles/common.scss';
@@ -24,11 +24,10 @@ import store from './store/store';
 import './axios/';
 import Axios from 'axios';
 Vue.prototype.$http = Axios
-
+Vue.use(Element)
 
 //引入需要渲染的视图组件
 import App from './App';
-
 //创建全局实例
 new Vue({
     el:'#app',
