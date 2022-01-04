@@ -51,16 +51,16 @@
       </div>
       <div class="intro">
         <ul>
-          <li class="no1"><a href="javascript:void(0);" target="_blank">
+          <li class="no1"><a  target="_blank">
             <h4>正品保障</h4>
             <p>100%正品低价</p>
           </a></li>
-          <li class="no2"><a href="javascript:void(0);" target="_blank">
+          <li class="no2"><a  target="_blank">
             <h4>30天退换货</h4>
             <p>购物有保障</p>
           </a></li>
-          <li class="no3"><a href="javascript:void(0);" target="_blank">
-            <h4>满99就包邮</h4>
+          <li class="no3"><a  target="_blank">
+            <h4>满99包邮</h4>
             <p>闪电发货</p>
           </a></li>
         </ul>
@@ -119,7 +119,6 @@
         </ul>
         <div class="hd_cart" id="ECS_CARTINFO" @mouseover="overShopCar" @mouseout="outShopCar">
           <router-link class="tit" :to="'/app/shoppingcart/cart'" target=_blank>
-
             <b class="iconfont">&#xe600;</b>去购物车结算<span><i class="iconfont">&#xe645;</i></span>
             <em class="num" id="hd_cartnum" style="visibility: visible;">{{ goods_list.goods_list.length }}</em>
           </router-link>
@@ -139,7 +138,7 @@
                   <a title="删除" class="iconfont del" @click="deleteGoods(index,item.goods.id)">×</a></dd>
               </dl>
             </div>
-            <div class="count">共<span class="red" id="hd_cart_count">{{ goods_list.length }}</span>件商品哦~
+            <div class="count">共<span class="red" id="hd_cart_count">{{ goods_list.length }}</span>件商品
               <p>总价:<span class="red"><em id="hd_cart_total">{{ goods_list.totalPrice }}</em></span>
                 <router-link class="btn" :to="'/app/shoppingcart/cart'" target=_blank>去结算
                 </router-link>

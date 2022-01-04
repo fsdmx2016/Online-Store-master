@@ -17,6 +17,7 @@ const userInfo = {
             token:cookie.getCookie('token')||''
         };
 const goods_list =  {
+       length:'',
        totalPrice:'',
         goods_list:[]
 
@@ -39,7 +40,7 @@ export default new Vuex.Store({
 //   },
 //   mutations: {
 //     setAuthority(){
-//         state.authority = JSON.parse(cookie.getCookie('authority')); 
+//         state.authority = JSON.parse(cookie.getCookie('authority'));
 //     }
 
 //   }

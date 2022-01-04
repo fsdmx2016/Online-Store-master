@@ -11,13 +11,17 @@
       <div class="goods-list">
         <ul>
           <li class="cle hover" style="border-bottom-style: none;" v-for="(item,index) in goods.goods_list">
+            <router-link :to="'/app/home/productDetail/'+item.goods.id" >
+
             <div class="pic">
               <a target="_blank"> <img :alt="item.goods.name" :src="item.goods.goods_front_image"></a>
             </div>
-            <div class="name">
-              <a target="_blank">{{item.goods.name}}</a>
-              <p></p>
-            </div>
+              <div class="name">
+                <a target="_blank" @click="">{{item.goods.name}}</a>
+                <p></p>
+              </div>
+            </router-link>
+
             <div class="price-xj">
               <p><em>￥{{item.goods.shop_price}}元</em></p>
             </div>
