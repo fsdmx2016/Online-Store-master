@@ -34,12 +34,17 @@ export const getGoodsDetail = goodId => { return axios.get(`${host}/goods/${good
 
 //获取购物车商品
 export const getShopCarts = params => { return axios.get(`${host}/shopcarts/`) }
+// 清空购物车商品
+export const clearShopCarts =  () => { return axios.get(`${host}/shopcarts/clear`) }
+
 // 添加商品到购物车
 export const addShopCart = params => { return axios.post(`${host}/shopcarts/`, params) }
 //更新购物车商品信息
 export const updateShopCart = (goodsId, params) => { return axios.patch(`${host}/shopcarts/`+goodsId+'/', params) }
 //删除某个商品的购物记录
 export const deleteShopCart = goodsId => { return axios.delete(`${host}/shopcarts/`+goodsId+'/') }
+//删除某个商品的购物记录
+export const clearShopCart = params => { return axios.get(`${host}/shoppingCart/clear`,params) }
 
 //收藏
 export const addFav = params => { return axios.post(`${host}/userfavs/`, params) }

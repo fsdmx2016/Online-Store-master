@@ -441,10 +441,10 @@ Mock.mock('/shoppingCart/remove',  //移除购物车某个商品
 {
 
 })
-Mock.mock('/shoppingCart/clear',  //清空购物车
-{
-
-})
+// Mock.mock('/shoppingCart/clear',  //清空购物车
+// {
+//
+// })
 Mock.mock('/order/orderInfo',  //获取订单收货人信息
 {
     orderStatus: '已完成',
@@ -465,7 +465,7 @@ Mock.mock('/order/receiveInfo',  //获取订单收货人信息
 })
 Mock.mock('/order/updateReceiveInfo',  //更新收货人信息
 {
-    
+
 })
 Mock.mock('/message/getAll',  //删除留言
     [
@@ -487,15 +487,15 @@ Mock.mock('/message/getAll',  //删除留言
 
 Mock.mock('/message/deleteMessage',  //删除留言
 {
-    
+
 })
 Mock.mock('/message/downloadMessage',  //下载上传的文件
 {
-    
+
 })
 Mock.mock('/message/addMessage',  //添加留言
 {
-    
+
 })
 Mock.mock('/address',  //获得所有配送地址
 [

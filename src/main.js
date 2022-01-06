@@ -7,6 +7,7 @@ import $ from 'jquery';
 //全局引入vue
 import Vue from 'vue';
 import Element from "element-ui";
+import 'element-ui/lib/theme-chalk/index.css';
 
 //全局引入共用css
 import './styles/common.scss';

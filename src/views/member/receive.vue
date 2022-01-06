@@ -343,7 +343,7 @@ select {
 </style>
 <style type="text/css">
     .addr .address {
-        height: 35px;
+        height: 39px;
     }
     .addr .address select{
         height: inherit;

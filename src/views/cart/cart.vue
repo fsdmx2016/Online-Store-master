@@ -42,7 +42,7 @@
 
       <div class="fd cle">
         <div class="fl">
-          <p class="no1"> <a id="del-all" @click="delAll">清空购物车</a> </p>
+          <p class="no1"> <a id="del-all" @click="clear_all">清空购物车</a> </p>
           <p><a class="graybtn" @click="continueShopping">继续购物</a></p>
         </div>
         <div class="fr" id="price-total">
@@ -78,7 +78,7 @@
 
 </template>
 <script>
-  import {getShopCarts, createOrder, updateShopCart, deleteShopCart, getAddress} from '../../api/api'
+  import {getShopCarts, createOrder, updateShopCart, deleteShopCart, getAddress,clearShopCart} from '../../api/api'
   export default {
     data () {
       return {
@@ -122,13 +122,11 @@
           totalPrice += entry.goods.shop_price*entry.nums
           console.log(entry.goods.shop_price);
         });
-
         this.goods.totalPrice = totalPrice
         this.totalPrice = totalPrice
       }).catch(function (error) {
       });
       this.getAllAddr ()
-
     },
     watch: {
 
@@ -160,11 +158,9 @@
         this.totalPrice = totalPrice;
       },
       deleteGoods(index,id) { //移除购物车
-        alert('您确定把该商品移除购物车吗');
         deleteShopCart(id).then((response)=> {
           console.log(response.data);
           this.goods.goods_list.splice(index,1);
-
           // 更新store数据
           this.$store.dispatch('setShopList');
 
@@ -195,19 +191,25 @@
       continueShopping () { // 继续购物
         this.$router.push({name: 'index'});
       },
-      delAll () { //清空购物车
-
-        this.$http.post('/shoppingCart/clear', {
-
-        }).then((response)=> {
-          console.log(response.data);
+      clear_all () { //清空购物车
+        clearShopCart().then((response)=> {
+          console.log(response)
           this.goods.goods_list.splice(0, this.goods.goods_list.length);
           // 更新store数据
           this.$store.dispatch('setShopList');
-
+          const h = this.$createElement;
+          this.$notify({
+            title: '清理结果',
+            message: h('i', { style: 'color: teal'}, '清理购物车成功')
+          });
         }).catch(function (error) {
-          console.log(error);
+          const h = this.$createElement;
+          this.$notify({
+            title: '清理结果',
+            message: h('i', { style: 'color: teal'}, '清理购物车失败！请重试')
+          });
         });
+
       },
       selectPay(id){
         this.payWrapActive = id;
