@@ -15,9 +15,9 @@
                                       <td width="72%" align="left" bgcolor="#FFFFFF"><input name="email" type="text" placeholder="" size="25" class="inputBg" v-model="userInfo.name"></td>
                                     </tr>
                                     <tr>
-                                        <td width="28%" align="right" bgcolor="#FFFFFF">出生日期： </td>
-                                        <td width="72%" align="left" bgcolor="#FFFFFF">
-                                            <datepicker language="ch"  v-model="userInfo.birthday"></datepicker>
+                                        <td width="30px" align="right" bgcolor="#FFFFFF">出生日期： </td>
+                                        <td width="50px" align="left" bgcolor="#FFFFFF" class="init_date">
+                                            <datepicker  language="ch"  v-model="userInfo.birthday"></datepicker>
                                         </td>
                                     </tr>
                                     <tr>
@@ -36,13 +36,13 @@
                                     <tr>
                                         <td width="28%" align="right" bgcolor="#FFFFFF" id="extend_field5i">手机：</td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF">
-                                            <input disabled name="extend_field5" type="text" class="inputBg" v-model="userInfo.mobile"><span style="color:#FF0000"> *</span>
+                                            <input enable name="extend_field5" type="text" class="inputBg" v-model="userInfo.mobile"><span style="color:#FF0000"> *</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" align="center" bgcolor="#FFFFFF">
                                             <!-- <input name="act" type="hidden" value="act_edit_profile"> -->
-                                            <button class="btn_blue_1" style="border:none;" @click="confirmModify">确认修改</button>
+                                            <button class="btn_blue_1" style=" border:1px solid;" @click="confirmModify" >确认修改</button>
                                             <!-- <input name="submit" type="submit" value="确认修改" class="btn_blue_1" style="border:none;"> -->
                                         </td>
                                     </tr>
@@ -194,7 +194,7 @@ import {getUserDetail, updateUserInfo} from '../../api/api'
 .btn_blue_1{
   display: inline-block;
   padding: 4px 12px;
-  height: 24px;
+  height: 35px;
   line-height: 25px;
   _line-height: 18px;
   border: 1px solid #1e9246;
@@ -208,9 +208,9 @@ import {getUserDetail, updateUserInfo} from '../../api/api'
   text-decoration: none;
   vertical-align: middle;
 }
-
-
-
+.init_date{
+  width: 60px;
+}
 
 </style>
 

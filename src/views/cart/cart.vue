@@ -241,8 +241,20 @@
         this.signer_name = cur_name
       },
       balanceCount () { // 结算
-          if(this.addrInfo.length==0){
-              alert("请选择收货地址")
+          if(this.goods.goods_list.length===0){
+            const h = this.$createElement;
+            this.$notify({
+              title: '错误！',
+              type: 'warning',
+              message: h('i', { style: 'color: teal'}, '购物车无商品，请先添加商品到购物车')
+            });
+          }
+          if(this.addrInfo.length===0){
+            this.$notify({
+              title: '错误！',
+              type: 'warning',
+              message: h('i', { style: 'color: teal'}, '请选择收货地址')
+            });
           }else{
             createOrder(
               {
@@ -265,7 +277,8 @@
 </script>
 <style scoped>
   .address {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+
   }
   .addressActive,.payWrapActive{
     border:1px solid red !important;
@@ -288,7 +301,7 @@
   .address .add {
     width: 100px;
     cursor: pointer;
-    height: 72px;
+    height: 92px;
   }
   .address ul li {
     vertical-align: top;
@@ -300,7 +313,7 @@
     cursor: pointer;
   }
   .address ul li .item {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
   }
   .sumup {
     margin-top: 20px;

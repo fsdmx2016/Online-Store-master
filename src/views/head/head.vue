@@ -22,9 +22,9 @@
                     class="iconfont arrow"> </i>
                     <div class="more-bd" :class="{show:isShowVip}">
                       <div class="list">
+                        <router-link :to="'/app/home/member/userinfo'">个人中心</router-link>
                         <router-link :to="'/app/home/member/order'">我的订单</router-link>
                         <router-link :to="'/app/home/member/collection'">我的收藏</router-link>
-                        <router-link :to="'/app/home/member/receive'">修改收货地址</router-link>
                       </div>
                     </div>
                   </li>
